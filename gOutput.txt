@@ -1,0 +1,2 @@
+my-ec2-publicIP = "13.238.159.82"
+my-ec2ID = "i-0304cb9883142a3e1"

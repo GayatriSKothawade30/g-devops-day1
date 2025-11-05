@@ -13,3 +13,4 @@ resource "local_file" "my_output_file" {
   filename   = "${path.module}/myIP.txt"
   depends_on = [aws_instance.example]
 }
+

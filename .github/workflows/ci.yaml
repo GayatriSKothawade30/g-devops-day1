@@ -1,0 +1,21 @@
+name: gsk job
+#trigger point
+on: 
+  push:
+    branches: [ "dryrun-aws" ]  
+    paths-ignore:
+      - "README.md"
+      - "terraform.tfstate"
+
+# creating jobs 
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: my first step to test github action
+      run: echo "Hello WOrld"
+           git version
+           whoami
+           ls -a
+  
+

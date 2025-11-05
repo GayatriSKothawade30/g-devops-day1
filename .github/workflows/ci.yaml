@@ -12,6 +12,12 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps: 
+    #calling first github action to clone my git repo dryrun to runner machine
+    - name: taking code from my repo
+      uses: actions/checkout@v5
+      with:
+        ref: dryrun-aws
+        
     - name: my first step to test github action
       run: |
            echo "Hello WOrld"
@@ -21,4 +27,5 @@ jobs:
            terraform version
            docker version
   
+
 

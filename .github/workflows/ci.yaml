@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: my first step to test github action
-      run: echo "Hello WOrld"
+      run: |
+           echo "Hello WOrld"
            git version
            whoami
            ls -a

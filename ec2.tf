@@ -25,6 +25,7 @@ connection {
  host = self.public_ip
  #content of private key data
  private_key = tls_private_key.rsa-4096-example.private_key_pem
+ timeout = "5m"
 }
 
 }

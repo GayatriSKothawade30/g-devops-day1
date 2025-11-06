@@ -15,5 +15,5 @@ resource "local_file" "my_output_file-2" {
 #sending public key to aws cloud account 
 resource "aws_key_pair" "deployer" {
   key_name   = "gsk-private-key"
-  public_key = tls_private_key.rsa-4096-example.public_key_openssh
+  public_key = var.ec2-key-name
 }

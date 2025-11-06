@@ -71,7 +71,7 @@ jobs:
       run: |
         echo "destroying aws job"
         terraform init
-        terraform list state
+        terraform state list
         terraform destroy --auto-approve
 
 

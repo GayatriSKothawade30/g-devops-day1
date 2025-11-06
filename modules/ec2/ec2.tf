@@ -2,11 +2,14 @@
 # creating ec2 vm 
 resource "aws_instance" "example" {
   #ami           = "ami-0a25a306450a2cba3"
+  count = var.novm
   ami           = var.gsk-ami-id
   instance_type = var.vm-size
   key_name      = aws_key_pair.deployer.key_name
+  #security_groups = [aws_security_group.allow_tls.name]
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
   tags = {
-    "Name" : var.vm-name
+    "Name" : "${var.vm-name}-${count.index}"
   }
 
 #provisioner

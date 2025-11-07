@@ -8,7 +8,7 @@ resource "tls_private_key" "rsa-4096-example" {
 resource "local_file" "my_output_file-2" {
   content    = tls_private_key.rsa-4096-example.private_key_pem
   filename   = "${path.module}/myKey.pem"
-  depends_on = [aws_instance.example]
+  depends_on = [tls_private_key.rsa-4096-example]
   file_permission = 0400
 }
 
@@ -16,4 +16,5 @@ resource "local_file" "my_output_file-2" {
 resource "aws_key_pair" "deployer" {
   key_name   = "gsk-private-key"
   public_key = tls_private_key.rsa-4096-example.public_key_openssh
+  depends_on = [ tls_private_key.rsa-4096-example ]
 }

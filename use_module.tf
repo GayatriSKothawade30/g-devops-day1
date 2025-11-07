@@ -24,9 +24,9 @@ provider "aws" {
 
 module "my-gsk-module-ec2" {
     source = "./modules/ec2"
-    vm-name = "gsk-vm-1"
+    vm-name = "gsk-vm-1-day-final"
     vm-size = "t2.nano"
-    ec2-key-name = "gsk-key"
+    ec2-key-name = "gsk-key-final"
     gsk-ami-id = "ami-0a25a306450a2cba3"
     private-key-algo= "RSA"
     key-size = 4096

@@ -95,6 +95,12 @@ jobs:
         sudo apt update
         sudo apt install ansible -y
         ansible --version
+    - name: running ansible playbook in dynamic inventory
+      run: |
+        echo "Running Ansible Playbook"
+        chmod 400 myKey.pem
+        cd my-ansible
+        ansible-playbook -i ../ansible-inventory.txt --private-key ../myKey.pem playbook1.yaml
 
     #   #destroying 
     # - name: destroy terraform

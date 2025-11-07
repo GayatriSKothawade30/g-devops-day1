@@ -1,6 +1,7 @@
 ---
 - name: defining target group
-  hosts: web-servers
+  hosts: gsk-roche
+  
   #defining variables 
   vars:
     x: httpd
@@ -23,9 +24,10 @@
   - name: copy code to http app server location
     copy:
       src: myapps/index.html
-      dest: /var/www/html/gsk.html
+      dest: /var/www/html/
 
   - name: starting {{x}} service
     service: 
       name: "{{x}}"
       state: started
+      enabled: yes
